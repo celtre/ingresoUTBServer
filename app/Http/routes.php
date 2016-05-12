@@ -12,5 +12,17 @@
 */
 
 $app->get('/', function () use ($app) {
-    return $app->version();
+    return "Servidor de la Universidad tecnologica de Bolivar para ingresoUTB";
+});
+$app->group(['prefix' => 'ingresoUTB','namespace' => 'App\Http\Controllers'], function($app)
+{
+    $app->get('registro','registrosController@index');
+
+    $app->get('registro/{id}','registrosController@getRegistro');
+
+    $app->post('registro','registrosController@createRegistro');
+
+    $app->put('registro/{id}','registrosController@updateRegistro');
+
+    $app->delete('registro/{id}','registrosController@deleteRegistro');
 });
