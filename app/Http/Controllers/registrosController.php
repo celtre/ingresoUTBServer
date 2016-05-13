@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Book;
+use App\registros;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 
-class BookController extends Controller{
+class registrosController extends Controller{
 
 
   public function index(){
@@ -18,14 +18,14 @@ class BookController extends Controller{
 
      }
 
-     public function getBook($id){
+     public function getRegistros($id){
 
          $Registros  = Registros::find($id);
 
          return response()->json($Registros);
      }
 
-     public function createBook(Request $request){
+     public function createRegistros(Request $request){
 
          $Registros = Registros::create($request->all());
 
@@ -33,14 +33,14 @@ class BookController extends Controller{
 
      }
 
-     public function deleteBook($id){
+     public function deleteRegistros($id){
          $Registros  = Registros::find($id);
          $Registros->delete();
 
          return response()->json('deleted');
      }
 
-     public function updateBook(Request $request,$id){
+     public function updateRegistros(Request $request,$id){
          $Registros  = Registros::find($id);
          $Registros->title = $request->input('codigo');
          $Registros->author = $request->input('autor');
