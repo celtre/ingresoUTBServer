@@ -14,6 +14,7 @@
 $app->get('/', function () use ($app) {
     return "Servidor de la Universidad tecnologica de Bolivar para ingresoUTB";
 });
+
 $app->group(['prefix' => 'ingresoUTB','namespace' => 'App\Http\Controllers'], function($app)
 {
     $app->get('registro','registrosController@index');

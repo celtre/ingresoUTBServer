@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\registros;
+use App\Registros;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -26,6 +26,7 @@ class registrosController extends Controller{
      }
 
      public function createRegistro(Request $request){
+
 
          $Registros = Registros::create($request->all());
 

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Book extends Model
+class Registros extends Model
 {
 
      protected $fillable = ['codigo', 'autor'];
