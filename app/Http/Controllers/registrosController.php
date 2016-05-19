@@ -18,14 +18,14 @@ class registrosController extends Controller{
 
      }
 
-     public function getRegistros($id){
+     public function getRegistro($id){
 
          $Registros  = Registros::find($id);
 
          return response()->json($Registros);
      }
 
-     public function createRegistros(Request $request){
+     public function createRegistro(Request $request){
 
          $Registros = Registros::create($request->all());
 
@@ -33,14 +33,14 @@ class registrosController extends Controller{
 
      }
 
-     public function deleteRegistros($id){
+     public function deleteRegistro($id){
          $Registros  = Registros::find($id);
          $Registros->delete();
 
          return response()->json('deleted');
      }
 
-     public function updateRegistros(Request $request,$id){
+     public function updateRegistro(Request $request,$id){
          $Registros  = Registros::find($id);
          $Registros->title = $request->input('codigo');
          $Registros->author = $request->input('autor');
