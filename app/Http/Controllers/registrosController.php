@@ -18,9 +18,9 @@ class registrosController extends Controller{
 
      }
 
-     public function getRegistro($id){
+     public function getRegistro($codigo){
 
-         $Registros  = Registros::find($id);
+         $Registros  = Registros::where('codigo', '=', $codigo)->get();
 
          return response()->json($Registros);
      }
